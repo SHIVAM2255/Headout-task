@@ -1,0 +1,28 @@
+
+FROM node:14-alpine
+
+WORKDIR /app
+
+
+COPY package*.json ./
+
+RUN npm install
+
+
+COPY . .
+
+
+EXPOSE 8080
+
+
+CMD ["node", "index.js"]
+
+
+commands for buildind and running docker file
+docker build -t node-http-server .
+docker run -p 8080:8080 --memory 1500m --cpus 2 node-http-server
+
+
+
+
+****sorry for the inconvinience but i was unable to create docker file and copied docker commands as i am studing into it but i have created a server on node js which is perfectly running in my locahost
